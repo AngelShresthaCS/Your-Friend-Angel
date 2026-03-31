@@ -1,6 +1,36 @@
 What we're doing
 We are building An Assistant that Tracks your curiosity, interests, goals, and feelings, and gives you personalized feedback, learning pathways, companionship, and fulfills your curiosity.
 
+Roadmap:
+
+Using Fast API to build a Backend with Postgresql as a Database.
+
+We want to build it with Next.js, but it should be cross compatible so that it can later be expanded to IOS, and Android applications. 
+
+We want to integrate AI. We will try to use our personal GPU and Ollama model. However, we will shift to cloud API as we scale.
+
+We may also expand our project to machine learning for future learning possiblilites
+
+We will integrate Text to Speech Features for which we will use Eleven Labs or similar tools. 
+
+We will have build in Authentication. However, we will add Oauth for ease and accessibility.
+
+As we move towards completion. Our project will shift towards hosting and scalability were we will experiment with AWS, Azure to build scalable infrastructure. 
+
+Docker, Kubernetes. 
+
+We will also learn to automate the CI/CD Pipelines. 
+
+Later, we will work towards collecting the logs and data through services like Zabbix, Splunk, and Prometheus. 
+
+We will also document every part of the process. We will be using Zira for the Software Project Management and we will use Agile/Scrum software development life cycle. 
+
+This is a Full Stack, Dev Ops, and Platform Engineering Project. 
+
+
+Tech Stack:
+
+
 1. Core Programming
 Skills
 Python (backend, AI)
