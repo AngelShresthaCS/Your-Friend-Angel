@@ -10,8 +10,23 @@ Note: Windows users will have different command
 
 ```pip install fastapi==0.135.2 "uvicorn[standard]==0.42.0"```
 
+#### Or Install all Dependencies from Requirements.txt
+```pip install -r requirements.txt```
+
 
 #### What [standard] actually does
 *When you run pip install uvicorn, you just get the bare minimum, pure-Python version of the server. It works, but it isn't optimized.*
 
 *When you add [standard], you are telling pip to install Uvicorn plus a specific bundle of optional, high-performance dependencies. Specifically, it grabs:*
+
+#### Run the App for the first time
+```uvicorn main:app --reload```
+
+####Install Node
+https://nodejs.org/en/download
+
+#### Install Next.js
+```npx create-next-app@16.2.2 . --typescript --eslint --tailwind --src-dir --app --import-alias "@/*"```
+
+#### Run Next.js
+```npm run dev```
