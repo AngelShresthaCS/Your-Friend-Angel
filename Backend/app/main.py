@@ -20,7 +20,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 # Dependecy
-def get_db()
+def get_db():
     db = SessionLocal()
     try:
         yield db
