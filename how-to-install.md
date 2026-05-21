@@ -20,7 +20,7 @@ Note: Windows users will have different command
 *When you add [standard], you are telling pip to install Uvicorn plus a specific bundle of optional, high-performance dependencies. Specifically, it grabs:*
 
 #### Run the App for the first time
-```uvicorn main:app --reload```
+```uvicorn app.main:app --reload```
 
 ####Install Node
 https://nodejs.org/en/download
@@ -28,5 +28,9 @@ https://nodejs.org/en/download
 #### Install Next.js
 ```npx create-next-app@16.2.2 . --typescript --eslint --tailwind --src-dir --app --import-alias "@/*"```
 
+#### Build from this Project
+```npm install```
 #### Run Next.js
 ```npm run dev```
+
+#### Use /docs or /redoc for API Documentation

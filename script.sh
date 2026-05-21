@@ -1,3 +1,4 @@
 source venv/bin/activate
+
 cd Backend
-uvicorn Backend.main:app --host 0.0.0.0 --port 8000
+ uvicorn main:app --reload 
