@@ -2,7 +2,7 @@ export async function GET() {
     const backendUrl = process.env.BACKEND_URL ?? "http://127.0.0.1:8000";
 
     try {
-        const response = await fetch(`${backendUrl}/`, {
+        const response = await fetch(`${backendUrl}/message`, {
             cache: "no-store",
         });
 

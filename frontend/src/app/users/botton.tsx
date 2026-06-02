@@ -7,7 +7,7 @@ export default function Botton() {
         setLoading(true);
         try {
             // Make sure this URL matches your local FastAPI server address
-            const response = await fetch("http://localhost:8000/random");
+            const response = await fetch("http://127.0.0.1:8000/random");
             
             if (!response.ok) throw new Error("Network response was not ok");
             
