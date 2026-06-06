@@ -22,5 +22,8 @@ class ValidateMessage(BaseModel):
     content: str
     user: str
     password: str
+class UserLogin(BaseModel):
+    email: EmailStr
+    password: str
 
 

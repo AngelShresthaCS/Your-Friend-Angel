@@ -1,11 +1,10 @@
 
  
 from fastapi import HTTPException, status, Depends, APIRouter
-from .. hashing import pwd_context
 from sqlalchemy.orm import Session
 from .. schemas import ValidateMessage
 from datetime import datetime
-from .. import models
+from .. import models, hashing
 from .. database import get_db
 
 router = APIRouter(
@@ -30,9 +29,9 @@ def create_message(message: ValidateMessage, db: Session = Depends(get_db)):
         )
 
     # 3. Verify the plaintext password against the saved database hash
-    if not pwd_context.verify(message.password, sender.password):
+    if not hashing.verify(message.password, sender.password):
         raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN, 
+            status_code=status.HTTP_404_NOT_FOUND, 
             detail="Invalid Credentials"
         )
     

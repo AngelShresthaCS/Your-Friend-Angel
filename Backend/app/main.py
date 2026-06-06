@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 from . import models
 from . database import engine
-from . routers import user, message
+from . routers import user, message, auth
 
 load_dotenv()
 
@@ -23,6 +23,7 @@ app.add_middleware(
 # Routers
 app.include_router(user.router)
 app.include_router(message.router)
+app.include_router(auth.router)
 
 @app.get("/")
 def welcome():

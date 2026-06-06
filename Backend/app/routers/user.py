@@ -1,9 +1,8 @@
-from .. hashing import pwd_context
 from fastapi import   HTTPException, status, Depends, APIRouter
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
 from .. schemas import User, ValidateUser
-from .. import models
+from .. import models, hashing
 from .. database import  get_db
 
 router = APIRouter(
@@ -20,7 +19,7 @@ def create_user(user: User, db: Session = Depends(get_db)):
         )
 
     try:
-        hashed_password = pwd_context.hash(user.password)
+        hashed_password = hashing.hash(user.password)
     except ValueError as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -56,7 +55,7 @@ def login(user_credentials: ValidateUser, db: Session = Depends(get_db)):
         )
 
     # If the email exists, verify the plaintext password against the saved database hash
-    if not pwd_context.verify(user_credentials.password, user.password):
+    if not hashing.verify(user_credentials.password, user.password):
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN, 
             detail="Invalid Credentials"
