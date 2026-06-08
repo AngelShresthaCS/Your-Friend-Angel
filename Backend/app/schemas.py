@@ -3,7 +3,6 @@ from typing import Optional
 from pydantic import BaseModel, EmailStr, Field
 from typing import Optional
 
-
 class User(BaseModel):
     username: str
     name: Optional[str] = None
@@ -22,8 +21,17 @@ class ValidateMessage(BaseModel):
     content: str
     user: str
     password: str
-class UserLogin(BaseModel):
-    email: EmailStr
-    password: str
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+class TokenData(BaseModel):
+    id : Optional[str] = None
+
+class Post(BaseModel):
+    title: str
+    content: str
+    class Config:
+        orm_mode = True
+
 
 

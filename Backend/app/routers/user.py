@@ -41,6 +41,12 @@ def create_user(user: User, db: Session = Depends(get_db)):
             status_code=status.HTTP_409_CONFLICT,
             detail="A user with that email or username already exists"
         )
+@router.get("/",status_code=status.HTTP_200_OK)
+def get_users(db: Session = Depends(get_db)):
+    users = db.query(models.User).all()
+    return users
+
+
 @router.post("/login", status_code=status.HTTP_200_OK)
 def login(user_credentials: ValidateUser, db: Session = Depends(get_db)):
     
